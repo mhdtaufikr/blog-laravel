@@ -11,27 +11,27 @@
         </div>
         
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <a href="{{$tentang->facebook}}">
-                    <div class="card-body bg-primary text-center m-3">
-                        <i class="fab fa-facebook-f fa-3x text-white"></i>
+                    <div style="background-color: black" class="card-body border border-warning text-center m-3">
+                       <img src="{{URL::asset('/upload/logo/tele.png')}}" style="width:50px;height:50px;" alt="">
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                <a href="{{$tentang->instagram}}">
-                    <div class="card-body bg-danger text-center m-3">
-                        <i class="fab fa-instagram fa-3x text-white"></i>
+                    <div style="background-color: black" class="card-body border border-warning text-center m-3">
+                        <img src="{{URL::asset('/upload/logo/mail.png')}}"style="width:60px;height:50px;" alt="">
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
+          {{--   <div class="col-md- 4">
                 <a href="{{$tentang->twitter}}">
                     <div class="card-body bg-info text-center m-3">
                         <i class="fab fa-twitter fa-3x text-white"></i>
                     </div>
                 </a>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection

@@ -21,8 +21,9 @@
 @endisset
 
 @isset($home)
-    @section('title', 'Semua Post')
+    @section('title', 'Meniti Jalan Lurus')
     @section('home', 'active')
+    <link rel="shortcut icon" style="background-color: black" href="{{URL::asset('/upload/logo/2-removebg.png')}}" type="image/x-icon" />
 @endisset
 
 @section('content')
@@ -38,7 +39,7 @@
                     <div class="carousel-item {{($loop->first) ? 'active' : ''}}">
                         <a href="/artikel-banner/{{$row->slug}}"><img src="/upload/banner/{{$row->sampul}}" height="400xp" class="d-block w-100" alt="..."></a>
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>{{$row->judul}}</h3>
+                            <h3 class="p-2 mb-1 rounded" style=" font-weight: bold;color: black;  background-color:#fbdc5b">{{$row->judul}}</h3>
                         </div>
                     </div>
                 @endforeach
@@ -56,16 +57,16 @@
 
     @isset($rekomendasi)
         @if ($rekomendasi->isNotEmpty())
-            <h2 class="my-4 text-center">Rekomendasi</h2>
+            <h2 class="my-4 text-center" style=" font-weight: bold;color: black;">Rekomendasi</h2>
 
             <div class="row mt-4">
                 @foreach ($rekomendasi as $row)
                         <div class="col-md-4 mt-5">
-                            <div class="card shadow-sm">
+                            <div class="card shadow-sm" style=" font-weight: bold;color: #fbdc5b;  background-color:black">
                                 <a href="/{{$row->post->slug}}"><img src="/upload/post/{{$row->post->sampul}}" class="card-img-top" alt="..."></a>
                                 <div class="card-body">
                                     <h5 class="card-title">{{$row->post->judul}}</h5>
-                                    <p class="card-text"><small class="text-muted">{{$row->post->created_at->diffForHumans()}}</small></p>
+                                    <p class="card-text"><small class="text-light">{{$row->post->created_at->diffForHumans()}}</small></p>
                                 </div>
                             </div>
                         </div>
@@ -97,11 +98,11 @@
         <div class="row mt-4">
             @foreach ($artikel as $row)
                     <div class="col-md-4 mt-5">
-                        <div class="card shadow-sm">
+                        <div class="card shadow-sm" style=" font-weight: bold;color: black;  background-color:#fbdc5b">
                             <a href="/{{$row->slug}}"><img src="/upload/post/{{$row->sampul}}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
                                 <h5 class="card-title">{{$row->judul}}</h5>
-                                <p class="card-text"><small class="text-muted">{{$row->created_at->diffForHumans()}}</small></p>
+                                <p class="card-text"><small class="">{{$row->created_at->diffForHumans()}}</small></p>
                             </div>
                         </div>
                     </div>

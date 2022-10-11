@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Auth::routes(['verify' => true]);
+Auth::routes(['verify' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -44,7 +44,7 @@ Route::get('/cek-role', function () {
     
 });
 
-Route::group(['middleware' => ['verified', 'role:admin|penulis']], function () {
+Route::group(['middleware' => [/* 'verified', */ 'role:admin|penulis']], function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
     Route::resource('/kategori', KategoriController::class);
@@ -92,6 +92,6 @@ Route::get('/artikel-tag/{slug}', [ArtikelController::class, 'tag']);
 Route::get('/artikel-banner/{slug}', [ArtikelController::class, 'banner']);
 Route::get('/artikel-author/{id}', [ArtikelController::class, 'author']);
 
-Route::middleware(['verified', 'role:pembaca'])->group(function () {
+Route::middleware([/* 'verified', */ 'role:pembaca'])->group(function () {
     Route::get('/like/{id}', [LikeController::class, 'like']);
 });

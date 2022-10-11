@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable /* implements MustVerifyEmail */
 {
     use HasFactory, Notifiable, HasRoles;
 
@@ -56,3 +56,4 @@ class User extends Authenticatable implements MustVerifyEmail
             ->get();
     }
 }
+    
