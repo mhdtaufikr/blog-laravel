@@ -82,6 +82,7 @@ return [
          */
 
         'model_morph_key' => 'model_id',
+        /* tes */
     ],
 
     /*
